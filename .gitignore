@@ -1,0 +1,25 @@
+cat > .gitignore << 'EOF'
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# C++ / HIP
+*.o
+*.so
+*.out
+
+# Benchmarks
+benchmarks/*.csv
+!benchmarks/.gitkeep
+
+# AI cache / secrets
+docs/ai_cache.json
+.env
+
+# VS Code
+.vscode/
+EOF
