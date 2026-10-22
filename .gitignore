@@ -11,6 +11,8 @@ dist/
 *.o
 *.so
 *.out
+src/test_cpu
+src/test_cpu.cpp
 
 # Benchmarks
 benchmarks/*.csv
