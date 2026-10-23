@@ -13,6 +13,8 @@ dist/
 *.out
 src/test_cpu
 src/test_cpu.cpp
+src/test_gpu
+src/test_gpu.cpp
 
 # Benchmarks
 benchmarks/*.csv
