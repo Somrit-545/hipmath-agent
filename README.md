@@ -2,7 +2,7 @@
 
 A GPU math library built with HIP/C++, exposed to Python via pybind11. It implements SAXPY, dot product, and GEMV kernels, and includes a Python AI agent that automatically generates edge-case tests.
 
-## Performance & The WSL2 Story
+## Performance & The WSL2 Bottleneck
 
 On my RTX 3050 running WSL2, my initial benchmarks were terrible. The GPU was running at 5 GB/s, which is slower than the CPU. I quickly realized I was measuring the overhead of `hipMalloc` and `hipMemcpy` crossing the WSL2 VM boundary, not the actual kernel.
 
