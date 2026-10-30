@@ -26,11 +26,14 @@ def ask_llm(prompt: str) -> str:
     api_key = os.environ.get("LLM_API_KEY")
     
     if api_key:
-        # Placeholder for actual API call (e.g., OpenAI)
-        # import openai
-        # response = openai.ChatCompletion.create(...)
-        # result = response.choices[0].message.content
-        result = "LLM response here" 
+        from google import genai
+        client = genai.Client(api_key=api_key)
+        
+        response = client.models.generate_content(
+            model='gemini-3.5-flash-lite',
+            contents=prompt,
+        )
+        result = response.text
     else:
         # MOCK MODE: Returns dummy data so the pipeline works without an API key
         print("[ai_agent] No LLM_API_KEY found. Using mock response.")
